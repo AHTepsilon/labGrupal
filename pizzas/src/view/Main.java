@@ -38,20 +38,17 @@ public class Main extends PApplet
 		
 		screen = 1;
 		
-		firstScreen = loadImage("screen1.png");
+		/*firstScreen = loadImage("screen1.png");
 		loginScreen = loadImage("loginScreen.png");
 		registerScreen = loadImage("signUpScreen.png");
 		homeScreen = loadImage("pizzaTypeSelect.png");
 		historyScreen = loadImage("deliveryHistory.png");
 		cartScreen = loadImage("shoppingCart.png");
 		pizzaSelectScreen = loadImage("toppingSelect.png");
-		paymentScreen = loadImage("paymentScreen.png");
+		paymentScreen = loadImage("paymentScreen.png");*/
 		
-		pizza1 = loadImage("2.png");
-		pizza2 = loadImage("3.png");
-		pizza3 = loadImage("4.png");
-		pizza4 = loadImage("5.png");
-		pizza5 = loadImage("6.png");
+		controls.loadScreenSw(this);
+		controls.loadEm(this);
 		
 		if(screen == 2)
 		{
@@ -67,50 +64,20 @@ public class Main extends PApplet
 	{		
 		background(0);
 		
-		System.out.println(mouseX + ", " + mouseY);
+		//System.out.println(mouseX + ", " + mouseY);
 		
-		if(screen == 1)
-		{
-			image(firstScreen, 0, 0);
-		}
+		controls.display(this);
 		
-		if(screen == 2)
-		{
-			image(loginScreen, 0, 0);
-		}
-		
-		if(screen == 3)
-		{
-			image(registerScreen, 0, 0);
-		}
-		
-		if(screen == 4)
-		{
-			image(homeScreen, 0, 0);
-		}
-		
-		if(screen == 5)
-		{
-			image(cartScreen, 0, 0);
-		}
-		
-		if(screen == 6)
-		{
-			image(historyScreen, 0, 0);
-		}
-		
-		if(screen == 7)
-		{
-			image(pizzaSelectScreen, 0, 0);
-		}
-		
-		if(screen == 8)
-		{
-			image(paymentScreen, 0, 0);
-		}
+		controls.switchScreen(this);
 	}
 
 	public void mousePressed()
+	{
+		
+		
+	}
+	
+	public void mouseReleased()
 	{
 		if(dist(mouseX, mouseY, 331, 313) < 20 && screen == 1)
 		{
@@ -161,10 +128,16 @@ public class Main extends PApplet
 			screen = 7;
 		}
 		
-	}
-	
-	public void mouseReleased()
-	{
+		if(dist(mouseX, mouseY, 340, 220) < 20 && screen == 4)
+		{
+			controls.pizzaSwitchUp();
+		}
+		
+		if(dist(mouseX, mouseY, 118, 220) < 20 && screen == 4)
+		{
+			controls.pizzaSwitchDown();
+		}
+		
 		//66, 589, 177, 619, 198, 589, 308, 619
 		
 		if(mouseX > 66 && mouseY > 589 && mouseX < 177 & mouseY < 619 && screen == 7)
