@@ -66,9 +66,13 @@ public class Main extends PApplet
 		
 		//System.out.println(mouseX + ", " + mouseY);
 		
-		controls.display(this);
+		
 		
 		controls.switchScreen(this);
+		if(screen==4) {
+			controls.display(this);
+		}
+		
 	}
 
 	public void mousePressed()

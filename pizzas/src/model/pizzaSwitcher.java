@@ -61,28 +61,36 @@ public class pizzaSwitcher
 		switch (pizzaNumb)
 		{
 		case 0:
-			app.image(pizza1, 155, 155);
+			app.image(pizza1, 145, 145);
 			System.out.println("displaying pizza 1");
 			break;
 		case 1:
-			app.image(pizza2, 155, 155);
+			app.image(pizza2, 145, 145);
 			System.out.println("displaying pizza 2");
 			break;
 		case 2:
-			app.image(pizza3, 155, 155);
+			app.image(pizza3, 145, 145);
 			System.out.println("displaying pizza 3");
 			break;
 		case 3:
-			app.image(pizza4, 155, 155);
+			app.image(pizza4, 145, 145);
 			System.out.println("displaying pizza 4");
 			break;
 		case 4:
-			app.image(pizza5, 155, 155);
+			app.image(pizza5, 135, 140);
 			System.out.println("displaying pizza 5");
 			break;
 		default:
 			break;
 		}
+	}
+	
+	public int getPizzaNumb() {
+		return pizzaNumb;
+	}
+	
+	public void setPizzaNumb(int pizzaNumb) {
+		this.pizzaNumb = pizzaNumb;
 	}
 
 }
