@@ -64,7 +64,7 @@ public class Main extends PApplet
 	{		
 		background(0);
 		
-		//System.out.println(mouseX + ", " + mouseY);
+		System.out.println(mouseX + ", " + mouseY);
 		
 		
 		
