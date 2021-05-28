@@ -91,7 +91,7 @@ public class pizzaSwitcher
 			System.out.println("displaying pizza 4");
 			app.textSize(30);
 			app.fill(247,99,0);
-			app.text("Paprika and carrot", 100, 375);
+			app.text("Paprika and \n carrot", 100, 375);
 			break;
 		case 4:
 			app.image(pizza5, 135, 140);
