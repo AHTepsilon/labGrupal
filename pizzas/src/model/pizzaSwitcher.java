@@ -9,10 +9,15 @@ public class pizzaSwitcher
 	int pizzaNumb;
 	PApplet app;
 	PImage pizza1, pizza2, pizza3, pizza4, pizza5;
+	
+	int pizzaX, pizzaY;
 
 	public pizzaSwitcher(int pizzaNumb, PApplet app) 
 	{
 		pizzaNumb = this.pizzaNumb;
+		
+		pizzaX = 130;
+		pizzaY = 130;
 	}
 	
 	public void loadImages(PApplet app)
@@ -61,7 +66,7 @@ public class pizzaSwitcher
 		switch (pizzaNumb)
 		{
 		case 0:
-			app.image(pizza1, 145, 145);
+			app.image(pizza1, pizzaX, pizzaY);
 			System.out.println("displaying pizza 1");
 			app.textSize(30);
 			//app.fill(247,99,0);
@@ -69,32 +74,30 @@ public class pizzaSwitcher
 			String s = "Mushrooms and plum";
 			app.fill(247,99,0);
 			app.text(s, 100, 350, 300, 500);  // Text wraps within text box
-			
-			
 			break;
 		case 1:
-			app.image(pizza2, 145, 145);
+			app.image(pizza2, pizzaX, pizzaY);
 			System.out.println("displaying pizza 2");
 			app.textSize(30);
 			app.fill(247,99,0);
 			app.text("Sausage ", 100, 375);
 			break;
 		case 2:
-			app.image(pizza3, 145, 145);
+			app.image(pizza3, pizzaX, pizzaY);
 			System.out.println("displaying pizza 3");
 			app.textSize(30);
 			app.fill(247,99,0);
 			app.text("Cheese and basil",100, 375);
 			break;
 		case 3:
-			app.image(pizza4, 145, 145);
+			app.image(pizza4, pizzaX, pizzaY);
 			System.out.println("displaying pizza 4");
 			app.textSize(30);
 			app.fill(247,99,0);
-			app.text("Paprika and \n carrot", 100, 375);
+			app.text("Bell pepper and \n carrot", 100, 375);
 			break;
 		case 4:
-			app.image(pizza5, 135, 140);
+			app.image(pizza5, 120, 120);
 			System.out.println("displaying pizza 5");
 			app.textSize(30);
 			app.fill(247,99,0);
