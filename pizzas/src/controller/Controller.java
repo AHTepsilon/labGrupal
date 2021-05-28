@@ -41,6 +41,11 @@ public class Controller
 		pizzaSw.switchPizzaDown();
 	}
 	
+	public void pizzaSwitchSize(PApplet app)
+	{
+		pizzaSw.switchSize(app);
+	}
+	
 	public void loadEm(PApplet app)
 	{
 		pizzaSw.loadImages(app);

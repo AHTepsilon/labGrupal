@@ -9,6 +9,7 @@ public class pizzaSwitcher
 	int pizzaNumb;
 	PApplet app;
 	PImage pizza1, pizza2, pizza3, pizza4, pizza5;
+	int pizzaSizeSelect;
 	
 	int pizzaX, pizzaY;
 
@@ -16,6 +17,7 @@ public class pizzaSwitcher
 	{
 		pizzaNumb = this.pizzaNumb;
 		
+		pizzaSizeSelect = 0;
 		pizzaX = 130;
 		pizzaY = 130;
 	}
@@ -61,13 +63,38 @@ public class pizzaSwitcher
 		System.out.println(pizzaNumb);
 	}
 	
+	@SuppressWarnings("static-access")
+	public void switchSize(PApplet app)
+	{
+		if(app.dist(app.mouseX, app.mouseY, 122, 533) < 20)
+		{
+			pizzaSizeSelect = 0;
+			System.out.println("personal");
+		}
+		if(app.dist(app.mouseX, app.mouseY, 187, 533) < 20)
+		{
+			pizzaSizeSelect = 1;
+			System.out.println("small");
+		}
+		if(app.dist(app.mouseX, app.mouseY, 255, 533) < 20)
+		{
+			pizzaSizeSelect = 2;
+			System.out.println("medium");
+		}
+		if(app.dist(app.mouseX, app.mouseY, 321, 533) < 20)
+		{
+			pizzaSizeSelect = 3;
+			System.out.println("large");
+		}
+	}
+	
 	public void display(PApplet app)
 	{
 		switch (pizzaNumb)
 		{
 		case 0:
 			app.image(pizza1, pizzaX, pizzaY);
-			System.out.println("displaying pizza 1");
+			//System.out.println("displaying pizza 1");
 			app.textSize(30);
 			//app.fill(247,99,0);
 			//app.text("Mushrooms and plum", 100, 365);
@@ -77,28 +104,28 @@ public class pizzaSwitcher
 			break;
 		case 1:
 			app.image(pizza2, pizzaX, pizzaY);
-			System.out.println("displaying pizza 2");
+			//System.out.println("displaying pizza 2");
 			app.textSize(30);
 			app.fill(247,99,0);
 			app.text("Sausage ", 100, 375);
 			break;
 		case 2:
 			app.image(pizza3, pizzaX, pizzaY);
-			System.out.println("displaying pizza 3");
+			//System.out.println("displaying pizza 3");
 			app.textSize(30);
 			app.fill(247,99,0);
 			app.text("Cheese and basil",100, 375);
 			break;
 		case 3:
 			app.image(pizza4, pizzaX, pizzaY);
-			System.out.println("displaying pizza 4");
+			//System.out.println("displaying pizza 4");
 			app.textSize(30);
 			app.fill(247,99,0);
 			app.text("Bell pepper and \n carrot", 100, 375);
 			break;
 		case 4:
 			app.image(pizza5, 120, 120);
-			System.out.println("displaying pizza 5");
+			//System.out.println("displaying pizza 5");
 			app.textSize(30);
 			app.fill(247,99,0);
 			app.text("Olives", 100, 375);

@@ -50,13 +50,10 @@ public class Main extends PApplet
 		controls.loadScreenSw(this);
 		controls.loadEm(this);
 		
-		if(screen == 2)
-		{
-			cp5.addTextfield(" ")
-			.setPosition(57, 219)
-			.setFocus(true)
-			.setColor(color(255, 168, 0));
-		}
+		//cp5.addTextfield("name")
+		//.setPosition(900, 900)
+		//.setFocus(true)
+		//.setColor(color(255, 168, 0));
 	}
 	
 	@Override
@@ -64,12 +61,11 @@ public class Main extends PApplet
 	{		
 		background(0);
 		
-		System.out.println(mouseX + ", " + mouseY);
-		
-		
+		//System.out.println(mouseX + ", " + mouseY);
 		
 		controls.switchScreen(this);
-		if(screen==4) {
+		if(screen == 4) 
+		{
 			controls.display(this);
 		}
 		
@@ -77,8 +73,7 @@ public class Main extends PApplet
 
 	public void mousePressed()
 	{
-		
-		
+		controls.pizzaSwitchSize(this);
 	}
 	
 	public void mouseReleased()
