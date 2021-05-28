@@ -46,6 +46,11 @@ public class Controller
 		pizzaSw.switchSize(app);
 	}
 	
+	public void pizzaHasBeenSelected(PApplet app)
+	{
+		pizzaSw.pizzaHasBeenSelected(app);
+	}
+	
 	public void loadEm(PApplet app)
 	{
 		pizzaSw.loadImages(app);

@@ -38,15 +38,6 @@ public class Main extends PApplet
 		
 		screen = 1;
 		
-		/*firstScreen = loadImage("screen1.png");
-		loginScreen = loadImage("loginScreen.png");
-		registerScreen = loadImage("signUpScreen.png");
-		homeScreen = loadImage("pizzaTypeSelect.png");
-		historyScreen = loadImage("deliveryHistory.png");
-		cartScreen = loadImage("shoppingCart.png");
-		pizzaSelectScreen = loadImage("toppingSelect.png");
-		paymentScreen = loadImage("paymentScreen.png");*/
-		
 		controls.loadScreenSw(this);
 		controls.loadEm(this);
 		
@@ -61,13 +52,15 @@ public class Main extends PApplet
 	{		
 		background(0);
 		
-		//System.out.println(mouseX + ", " + mouseY);
+		System.out.println(mouseX + ", " + mouseY);
 		
 		controls.switchScreen(this);
 		if(screen == 4) 
 		{
 			controls.display(this);
 		}
+		
+		controls.pizzaHasBeenSelected(this);
 		
 	}
 
@@ -139,7 +132,7 @@ public class Main extends PApplet
 		
 		//66, 589, 177, 619, 198, 589, 308, 619
 		
-		if(mouseX > 66 && mouseY > 589 && mouseX < 177 & mouseY < 619 && screen == 7)
+		/*if(mouseX > 66 && mouseY > 589 && mouseX < 177 & mouseY < 619 && screen == 7)
 		{
 			screen = 5;
 		}
@@ -147,7 +140,7 @@ public class Main extends PApplet
 		if(mouseX > 198 && mouseY > 589 && mouseX < 308 && mouseY < 619 && screen == 7)
 		{
 			screen = 8;
-		}
+		}*/
 	}
 	
 }

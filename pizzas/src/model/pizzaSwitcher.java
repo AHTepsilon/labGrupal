@@ -2,6 +2,7 @@ package model;
 
 import processing.core.PApplet;
 import processing.core.PImage;
+import view.Main;
 
 public class pizzaSwitcher 
 {
@@ -85,6 +86,71 @@ public class pizzaSwitcher
 		{
 			pizzaSizeSelect = 3;
 			System.out.println("large");
+		}
+	}
+	
+	public void pizzaHasBeenSelected(PApplet app)
+	{
+		if(Main.screen == 7)
+		{
+			switch(pizzaNumb)
+			{
+			case 0:
+				app.textSize(30);
+				app.text("Mushrooms \n & Plums", 25, 218);
+				
+				app.textSize(15);
+				app.text("A delicious combination, classic mushrooms \n and plums on sourdough", 25, 297);
+				break;
+			case 1:
+				app.textSize(30);
+				app.text("Sausage", 25, 218);
+				
+				app.textSize(15);
+				app.text("Spicy italian sausage delight", 25, 297);
+				break;
+			case 2: 
+				app.textSize(30);
+				app.text("Cheese and \n basil", 25, 218);
+				
+				app.textSize(15);
+				app.text("Simple cheese pizza on sourdough aromatized \n with basil", 25, 297);
+				break;
+			case 3:
+				app.textSize(30);
+				app.text("Bell pepper \n and carrot", 25, 218);
+				
+				app.textSize(15);
+				app.text("Vegetarian option with bell pepper and \n roasted carrots", 25, 297);
+				break;
+			case 4:
+				app.textSize(30);
+				app.text("Olives", 25, 218);
+				
+				app.textSize(15);
+				app.text("Simple yet elegant, delicious \n lombardan olives on sourdough", 25, 297);
+				break;
+			}
+			
+			switch(pizzaSizeSelect)
+			{
+			case 0:
+				app.textSize(30);
+				app.text("P", 277, 220);
+				break;
+			case 1:
+				app.textSize(30);
+				app.text("S", 277, 220);
+				break;
+			case 2:
+				app.textSize(30);
+				app.text("M", 271, 220);
+				break;
+			case 3:
+				app.textSize(30);
+				app.text("L", 277, 220);
+				break;
+			}
 		}
 	}
 	
