@@ -41,8 +41,12 @@ public class Main extends PApplet
 		controls.loadScreenSw(this);
 		controls.loadEm(this);
 		
-		//cp5.addTextfield("name")
-		//.setPosition(900, 900)
+		cp5.addTextfield("name");		
+		cp5.setPosition(375, 667);
+		
+//		cp5.addTextfield("password");		
+//		cp5.setPosition(375, 667);
+		
 		//.setFocus(true)
 		//.setColor(color(255, 168, 0));
 	}
@@ -55,9 +59,21 @@ public class Main extends PApplet
 		System.out.println(mouseX + ", " + mouseY);
 		
 		controls.switchScreen(this);
+		
 		if(screen == 4) 
 		{
 			controls.display(this);
+		}
+		
+		if(screen == 2) 
+		{
+			cp5.setPosition(57, 219);
+			cp5.setColorActive(color(239,149,109));      //Green border when selected
+			cp5.setColorBackground(color(240,221,170));  //Dark red background
+			
+//			cp5.setPosition(57, 300);
+//			cp5.setColorActive(color(239,149,109));      //Green border when selected
+//			cp5.setColorBackground(color(240,221,170));  //Dark red background
 		}
 		
 		controls.pizzaHasBeenSelected(this);
