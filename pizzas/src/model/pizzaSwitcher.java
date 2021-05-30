@@ -12,7 +12,7 @@ public class pizzaSwitcher
 	PImage pizza1, pizza2, pizza3, pizza4, pizza5;
 	int pizzaSizeSelect;
 	
-	double price;
+	static public double price;
 	
 	int pizzaX, pizzaY;
 
@@ -20,7 +20,7 @@ public class pizzaSwitcher
 	{
 		pizzaNumb = this.pizzaNumb;
 		
-		pizzaSizeSelect = 0;
+		pizzaSizeSelect = 9;
 		pizzaX = 130;
 		pizzaY = 130;
 	}
@@ -69,22 +69,22 @@ public class pizzaSwitcher
 	@SuppressWarnings("static-access")
 	public void switchSize(PApplet app)
 	{
-		if(app.dist(app.mouseX, app.mouseY, 122, 533) < 20)
+		if(app.dist(app.mouseX, app.mouseY, 122, 533) < 20 && Main.screen == 4)
 		{
 			pizzaSizeSelect = 0;
 			System.out.println("personal");
 		}
-		if(app.dist(app.mouseX, app.mouseY, 187, 533) < 20)
+		if(app.dist(app.mouseX, app.mouseY, 187, 533) < 20 && Main.screen == 4)
 		{
 			pizzaSizeSelect = 1;
 			System.out.println("small");
 		}
-		if(app.dist(app.mouseX, app.mouseY, 255, 533) < 20)
+		if(app.dist(app.mouseX, app.mouseY, 255, 533) < 20 && Main.screen == 4)
 		{
 			pizzaSizeSelect = 2;
 			System.out.println("medium");
 		}
-		if(app.dist(app.mouseX, app.mouseY, 321, 533) < 20)
+		if(app.dist(app.mouseX, app.mouseY, 321, 533) < 20 && Main.screen == 4)
 		{
 			pizzaSizeSelect = 3;
 			System.out.println("large");
@@ -250,5 +250,15 @@ public class pizzaSwitcher
 	public void setPizzaNumb(int pizzaNumb) {
 		this.pizzaNumb = pizzaNumb;
 	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	
 
 }

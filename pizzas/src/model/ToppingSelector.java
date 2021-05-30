@@ -27,7 +27,7 @@ public class ToppingSelector
 	@SuppressWarnings("static-access")
 	public void addToppings(PApplet app)
 	{
-		if(app.dist(app.mouseX, app.mouseY, 80, 454) < 20)
+		if(app.dist(app.mouseX, app.mouseY, 80, 454) < 20 && Main.screen == 7)
 		{
 			if(!selectedExtraCheese)
 			{
@@ -35,15 +35,19 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(80, 454, 60);
+				
+				pizzaSwitcher.price += 1.99;
+				
 			}
 			
 			else if(selectedExtraCheese)
 			{
 				selectedExtraCheese = false;
+				pizzaSwitcher.price -= 1.99;
 			}
 		}
 		
-		if(app.dist(app.mouseX, app.mouseY, 187, 454) < 20)
+		if(app.dist(app.mouseX, app.mouseY, 187, 454) < 20 && Main.screen == 7)
 		{
 			if(!selectedSoda)
 			{
@@ -51,15 +55,18 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(187, 454, 60);
+				
+				pizzaSwitcher.price += 1.99;
 			}
 			
 			else if(selectedSoda)
 			{
 				selectedSoda = false;
+				pizzaSwitcher.price -= 1.99;
 			}
 		}
 		
-		if(app.dist(app.mouseX, app.mouseY, 292, 454) < 20)
+		if(app.dist(app.mouseX, app.mouseY, 292, 454) < 20 && Main.screen == 7)
 		{
 			if(!selectedGarlicDip)
 			{
@@ -67,15 +74,18 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(292, 454, 60);
+				
+				pizzaSwitcher.price += 1.99;
 			}
 			
 			else if(selectedGarlicDip)
 			{
 				selectedGarlicDip = false;
+				pizzaSwitcher.price -= 1.99;
 			}
 		}
 		
-		if(app.dist(app.mouseX, app.mouseY, 80, 535) < 20)
+		if(app.dist(app.mouseX, app.mouseY, 80, 535) < 20 && Main.screen == 7)
 		{
 			if(!selectedNachos)
 			{
@@ -83,15 +93,18 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(80, 535, 60);
+			
+				pizzaSwitcher.price += 1.99;
 			}
 			
 			else if(selectedNachos)
 			{
 				selectedNachos = false;
+				pizzaSwitcher.price -= 1.99;
 			}
 		}
 		
-		if(app.dist(app.mouseX, app.mouseY, 187, 535) < 20)
+		if(app.dist(app.mouseX, app.mouseY, 187, 535) < 20 && Main.screen == 7)
 		{
 			if(!selectedCheeseCrust)
 			{
@@ -99,15 +112,18 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(187, 535, 60);
+				
+				pizzaSwitcher.price += 1.99;
 			}
 			
 			else if(selectedCheeseCrust)
 			{
 				selectedCheeseCrust = false;
+				pizzaSwitcher.price -= 1.99;
 			}
 		}
 		
-		if(app.dist(app.mouseX, app.mouseY, 292, 535) < 20)
+		if(app.dist(app.mouseX, app.mouseY, 292, 535) < 20 && Main.screen == 7)
 		{
 			if(!selectedGarlicBread)
 			{
@@ -115,11 +131,14 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(292, 535, 60);
+				
+				pizzaSwitcher.price += 1.99;
 			}
 			
 			else if(selectedGarlicBread)
 			{
 				selectedGarlicBread = false;
+				pizzaSwitcher.price -= 1.99;
 			}
 		}
 	}

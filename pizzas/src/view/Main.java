@@ -3,6 +3,7 @@ package view;
 import controlP5.ControlP5;
 import controlP5.Textfield;
 import controller.Controller;
+import model.pizzaSwitcher;
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
@@ -77,7 +78,7 @@ public class Main extends PApplet {
 		background(0);
 		textFont(font);
 
-		System.out.println(mouseX + ", " + mouseY);
+		//System.out.println(mouseX + ", " + mouseY);
 
 		controls.switchScreen(this);
 
@@ -105,7 +106,7 @@ public class Main extends PApplet {
 			phone = Phone.getStringValue();
 			email = eMail.getStringValue();
 
-			System.out.println(name + userpass + phone + email);
+			//System.out.println(name + userpass + phone + email);
 			
 			//userInfo();
 			//userRegister();
@@ -122,8 +123,8 @@ public class Main extends PApplet {
 		if (screen == 4) {
 			controls.display(this);
 
-			System.out.println(userLog + " es el usuario");
-			System.out.println(passwordLog + " es contraseña");
+			//System.out.println(userLog + " es el usuario");
+			//System.out.println(passwordLog + " es contraseña");
 		}
 
 		if (screen == 5) {
@@ -137,6 +138,7 @@ public class Main extends PApplet {
 		
 		controls.paymentCart();
 		controls.pizzaHasBeenSelected(this);
+		System.out.println(pizzaSwitcher.price);
 
 	}
 
