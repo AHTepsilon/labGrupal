@@ -11,11 +11,6 @@ public class Main extends PApplet
 	private ControlP5 cp5;
 	Controller controls;
 	
-	PImage firstScreen, loginScreen, registerScreen, homeScreen, pizzaSelectScreen, 
-			deliveryScreen, cartScreen, paymentScreen, selectPaymentScreen, exitScreen, historyScreen;
-	
-	PImage pizza1, pizza2, pizza3, pizza4, pizza5;
-	
 	PFont font;
 	
 	public static int screen;
@@ -92,14 +87,14 @@ public class Main extends PApplet
 		
 		  cp5 = new ControlP5(this); // create an instance of the controlP5 object for this program
 
-		  cp5.addTextfield("name")
+		  cp5.addTextfield(" ")
 			.setPosition(57, 219)
 			.setColorActive(color(239,149,109))     
 		.setColorBackground(color(240,221,170))
 		;
 			
 		  
-		  cp5.addTextfield("password")
+		  cp5.addTextfield("  ")
 			.setPosition(57, 300)
 			.setColorActive(color(239,149,109))      
 			.setColorBackground(color(240,221,170))
@@ -111,6 +106,8 @@ public class Main extends PApplet
 	public void mousePressed()
 	{
 		controls.pizzaSwitchSize(this);
+		controls.toppingSelection(this);
+		controls.confirmToppings(this);
 	}
 	
 	public void mouseReleased()
@@ -162,6 +159,11 @@ public class Main extends PApplet
 		if(mouseX > 156 && mouseY > 591 && mouseX < 292 && mouseY < 614 && screen == 4)
 		{
 			screen = 7;
+		}
+		
+		if(dist(mouseX, mouseY, 41, 53) < 20 && screen == 5)
+		{
+			screen = 4;
 		}
 		
 		if(dist(mouseX, mouseY, 340, 220) < 20 && screen == 4)

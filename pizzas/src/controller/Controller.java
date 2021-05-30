@@ -1,5 +1,6 @@
 package controller;
 
+import model.ToppingSelector;
 import model.pizzaSwitcher;
 import model.screenSwitcher;
 import processing.core.PApplet;
@@ -8,12 +9,14 @@ public class Controller
 {
 	screenSwitcher screenSw;
 	pizzaSwitcher pizzaSw;
+	ToppingSelector toppingSel;
 	PApplet app;
 	
 	public Controller() 
 	{
 		pizzaSw = new pizzaSwitcher(0, app);
 		screenSw = new screenSwitcher(app);
+		toppingSel = new ToppingSelector();
 	}
 	
 	public void screenControl(PApplet app)
@@ -59,5 +62,15 @@ public class Controller
 	public void display(PApplet app)
 	{
 		pizzaSw.display(app);
+	}
+	
+	public void toppingSelection(PApplet app)
+	{
+		toppingSel.addToppings(app);
+	}
+	
+	public void confirmToppings(PApplet app)
+	{
+		toppingSel.confirmToppings(app);
 	}
 }
