@@ -30,6 +30,7 @@ public class Main extends PApplet {
 	String userLog;
 	String passwordLog;
 
+
 	private String[] userInfo;
 	private String[] infoText;
 	private String name, userpass, phone, email;
@@ -58,15 +59,7 @@ public class Main extends PApplet {
 
 		controls.loadScreenSw(this);
 		controls.loadEm(this);
-
-//		cp5.addTextfield("name");		
-//		cp5.setPosition(375, 667);
-//		
-//		cp5.addTextfield("password");		
-//		cp5.setPosition(375, 667);
-
-		// .setFocus(true)
-		// .setColor(color(255, 168, 0));
+		userInfo = new String[50];
 		createTextFields();
 		createTextFieldsRegister();
 
@@ -109,7 +102,7 @@ public class Main extends PApplet {
 			//System.out.println(name + userpass + phone + email);
 			
 			//userInfo();
-			//userRegister();
+			userRegister();
 
 		} else {
 			
@@ -160,43 +153,55 @@ public class Main extends PApplet {
 
 		userName = cp5.addTextfield("   ").setPosition(55, 180).setColorActive(color(239, 149, 109))
 				.setColorBackground(color(240, 221, 170));
-		passWord = cp5.addTextfield("     ").setPosition(55, 250).setColorActive(color(239, 149, 109))
+		passWord = cp5.addTextfield("    ").setPosition(55, 250).setColorActive(color(239, 149, 109))
 				.setColorBackground(color(240, 221, 170));
 		Phone = cp5.addTextfield("     ").setPosition(55, 330).setColorActive(color(239, 149, 109))
 				.setColorBackground(color(240, 221, 170));
-		eMail = cp5.addTextfield("     ").setPosition(55, 410).setColorActive(color(239, 149, 109))
+		eMail = cp5.addTextfield("      ").setPosition(55, 410).setColorActive(color(239, 149, 109))
 				.setColorBackground(color(240, 221, 170));
 	}
 
 	public void userInfo() { // divide el txt
+		//
+//				infoText = loadStrings("./data/info/userInfo.txt");
+//				System.out.println("se dividio el texto");
+		//
+//				for (int i = 0; i < infoText.length; i++) {
+		//
+//					String[] Line1 = infoText[i].split(" ");
+		//
+//					name = Line1[0];
+//					userpass = Line1[1];
+//					phone = Line1[2];
+//					email = Line1[3];
 
-		infoText = loadStrings("./data/info/userInfo.txt");
-		System.out.println("se dividio el texto");
+//				}
+//				
+			}
 
-		for (int i = 0; i < infoText.length; i++) {
 
-			String[] Line1 = infoText[i].split(" ");
+public void userRegister() { // guarde el txt
 
-			name = Line1[0];
-			userpass = Line1[1];
-			phone = Line1[2];
-			email = Line1[3];
+		System.out.println("HELLOOOOOOO");
+
+
+
+		for (int i = 0; i < userInfo.length; i++) {
+
+			name = userName.getStringValue();
+			userpass = passWord.getStringValue();
+			phone = Phone.getStringValue();
+			email = eMail.getStringValue();
+
+			String line = name + " " + userpass + " " + phone + " " + email;
+
+			userInfo[i] = line;
+			// System.out.println(users);
+			System.out.println(userInfo[i]);
+
 		}
-	}
 
-	public void userRegister() { // guarde el txt
-
-//		System.out.println("HELLOOOOOOO");
-//
-//		for (int i = 0; i < users.size(); i++) {
-//
-//			String line = name + " " + userpass + " " + phone + " " + email;
-//
-//			userInfo[i] = line;
-//
-//			saveStrings("./data/info/userInfo.txt", userInfo);
-//
-//		}
+		saveStrings("./data/info/userInfo.txt", userInfo);
 
 	}
 
