@@ -73,4 +73,14 @@ public class Controller
 	{
 		toppingSel.confirmToppings(app);
 	}
+	
+	public void paymentCart()
+	{
+		pizzaSw.paymentCart();
+	}
+	
+	public void printPrice(PApplet app)
+	{
+		pizzaSw.printPrice(app);
+	}
 }

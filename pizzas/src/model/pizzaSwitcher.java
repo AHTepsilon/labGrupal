@@ -236,6 +236,13 @@ public class pizzaSwitcher
 		}
 	}
 	
+	public void printPrice(PApplet app)
+	{
+		app.fill(255);
+		app.textSize(21);
+		app.text(Double.toString(price), 246, 485);
+	}
+	
 	public int getPizzaNumb() {
 		return pizzaNumb;
 	}

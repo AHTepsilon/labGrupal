@@ -130,8 +130,12 @@ public class Main extends PApplet {
 			noStroke();
 			fill(255, 168, 0);
 			rect(225, 458, 80, 40);
+			
+			controls.printPrice(this);
 		}
-
+		
+		
+		controls.paymentCart();
 		controls.pizzaHasBeenSelected(this);
 
 	}
@@ -154,7 +158,6 @@ public class Main extends PApplet {
 
 		userName = cp5.addTextfield("   ").setPosition(55, 180).setColorActive(color(239, 149, 109))
 				.setColorBackground(color(240, 221, 170));
-
 		passWord = cp5.addTextfield("     ").setPosition(55, 250).setColorActive(color(239, 149, 109))
 				.setColorBackground(color(240, 221, 170));
 		Phone = cp5.addTextfield("     ").setPosition(55, 330).setColorActive(color(239, 149, 109))
@@ -165,7 +168,7 @@ public class Main extends PApplet {
 
 	public void userInfo() { // divide el txt
 
-		infoText = loadStrings("info/userInfo.txt");
+		infoText = loadStrings("./data/info/userInfo.txt");
 		System.out.println("se dividio el texto");
 
 		for (int i = 0; i < infoText.length; i++) {
