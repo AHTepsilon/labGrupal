@@ -9,32 +9,18 @@ import processing.core.PFont;
 import processing.core.PImage;
 
 public class Main extends PApplet {
-	private ControlP5 cp5;
+	
 	Controller controls;
-
 	PFont font;
-
+	
+	private ControlP5 cp5;
 	public static int screen;
-
 	boolean isLoginScreen;
 
-	//// register
-	Textfield user;
-	Textfield password;
-	
-	Textfield userName;
-	Textfield passWord;
-	Textfield Phone;
-	Textfield eMail;
-
-	String userLog;
-	String passwordLog;
-
-
-	private String[] userInfo;
-	private String[] infoText;
-	private String name, userpass, phone, email;
-
+	//// register	
+	public Textfield userName,passWord, Phone, eMail, password, user;
+	public String userLog, passwordLog,  name, userpass, phone, email;
+	private String[] userInfo, infoText;
 	// -------------------
 
 	public static void main(String[] args) {
@@ -71,8 +57,6 @@ public class Main extends PApplet {
 		background(0);
 		textFont(font);
 
-		//System.out.println(mouseX + ", " + mouseY);
-
 		controls.switchScreen(this);
 
 		if (screen == 2) {
@@ -81,6 +65,8 @@ public class Main extends PApplet {
 
 			userLog = user.getStringValue();
 			passwordLog = password.getStringValue();
+			
+			userInfo();
 
 		} else {
 			user.setVisible(false);
@@ -99,13 +85,9 @@ public class Main extends PApplet {
 			phone = Phone.getStringValue();
 			email = eMail.getStringValue();
 
-			//System.out.println(name + userpass + phone + email);
-			
-			//userInfo();
 			userRegister();
 
-		} else {
-			
+		} else {			
 			userName.setVisible(false);
 			passWord.setVisible(false);
 			Phone.setVisible(false);
@@ -115,9 +97,8 @@ public class Main extends PApplet {
 
 		if (screen == 4) {
 			controls.display(this);
+			
 
-			//System.out.println(userLog + " es el usuario");
-			//System.out.println(passwordLog + " es contraseña");
 		}
 
 		if (screen == 5) {
@@ -162,47 +143,41 @@ public class Main extends PApplet {
 	}
 
 	public void userInfo() { // divide el txt
-		//
-//				infoText = loadStrings("./data/info/userInfo.txt");
-//				System.out.println("se dividio el texto");
-		//
-//				for (int i = 0; i < infoText.length; i++) {
-		//
-//					String[] Line1 = infoText[i].split(" ");
-		//
-//					name = Line1[0];
-//					userpass = Line1[1];
-//					phone = Line1[2];
-//					email = Line1[3];
 
-//				}
-//				
+		if (userInfo != null) {
+			infoText = loadStrings("./data/info/userInfo.txt");
+			System.out.println("se dividio el texto");
+
+			for (int i = 0; i < infoText.length; i++) {
+
+				String[] Line1 = infoText[i].split(" ");
+
+				name = Line1[0];
+				userpass = Line1[1];
+				phone = Line1[2];
+				email = Line1[3];
+
 			}
+			
+			System.out.println(name.equals(userLog));
+			System.out.println(userpass.equals(passwordLog));
+
+		}
+
+	}
 
 
 public void userRegister() { // guarde el txt
 
-		System.out.println("HELLOOOOOOO");
-
-
-
 		for (int i = 0; i < userInfo.length; i++) {
 
-			name = userName.getStringValue();
-			userpass = passWord.getStringValue();
-			phone = Phone.getStringValue();
-			email = eMail.getStringValue();
-
 			String line = name + " " + userpass + " " + phone + " " + email;
-
 			userInfo[i] = line;
-			// System.out.println(users);
 			System.out.println(userInfo[i]);
-
 		}
-
 		saveStrings("./data/info/userInfo.txt", userInfo);
-
+		
+		return;
 	}
 
 	public void mousePressed() {
@@ -225,6 +200,7 @@ public void userRegister() { // guarde el txt
 		}
 
 		if (mouseX > 87 && mouseY > 444 && mouseX < 297 && mouseY < 487 && screen == 2) {
+			
 			screen = 4;
 		}
 
