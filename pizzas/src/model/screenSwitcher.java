@@ -13,7 +13,7 @@ public class screenSwitcher
 	
 	public screenSwitcher(PApplet app) 
 	{
-
+		
 	}
 	
 	public void loadImages(PApplet app)

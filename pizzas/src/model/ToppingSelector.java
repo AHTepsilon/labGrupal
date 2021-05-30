@@ -128,6 +128,54 @@ public class ToppingSelector
 		}
 	}
 	
+	public void printToppingsToCart(PApplet app)
+	{
+		if(Main.screen == 5)
+		{
+			if(selectedExtraCheese)
+			{
+				app.fill(255, 168, 0);
+				app.textSize(15);
+				app.text("Extra cheese", 66, 265);
+			}
+			
+			if(selectedSoda)
+			{
+				app.fill(255, 168, 0);
+				app.textSize(15);
+				app.text("Soda", 66, 285);
+			}
+			
+			if(selectedGarlicDip)
+			{
+				app.fill(255, 168, 0);
+				app.textSize(15);
+				app.text("Garlic Dip", 66, 305);
+			}
+			
+			if(selectedNachos)
+			{
+				app.fill(255, 168, 0);
+				app.textSize(15);
+				app.text("Nachos", 66, 325);
+			}
+			
+			if(selectedCheeseCrust)
+			{
+				app.fill(255, 168, 0);
+				app.textSize(15);
+				app.text("Cheese Crust", 66, 345);
+			}
+			
+			if(selectedGarlicBread)
+			{
+				app.fill(255, 168, 0);
+				app.textSize(15);
+				app.text("Garlic Bread", 66, 365);
+			}
+		}
+	}
+	
 	public void confirmToppings(PApplet app)
 	{
 		if(app.mouseX > 198 && app.mouseY > 589 && app.mouseX < 308 && app.mouseY < 619 && Main.screen == 7 &&

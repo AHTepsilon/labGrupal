@@ -88,4 +88,9 @@ public class Controller
 	{
 		pizzaSw.printToCart(app);
 	}
+	
+	public void printToppingsToCart(PApplet app)
+	{
+		toppingSel.printToppingsToCart(app);
+	}
 }

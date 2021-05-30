@@ -113,6 +113,7 @@ public class Main extends PApplet {
 			circle(267, 190, 50);
 			
 			printToCart();
+			controls.printToppingsToCart(this);
 			controls.printPrice(this);
 		}
 		
