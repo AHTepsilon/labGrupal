@@ -82,6 +82,13 @@ public class Main extends PApplet
 		
 		controls.pizzaHasBeenSelected(this);
 		
+		if(screen == 5)
+		{
+			noStroke();
+			fill(255, 168, 0);
+			rect(225, 458, 80, 40);
+		}
+		
 	}
 	public void createGUI() { // create the fields and buttons
 		
@@ -161,7 +168,7 @@ public class Main extends PApplet
 			screen = 7;
 		}
 		
-		if(dist(mouseX, mouseY, 41, 53) < 20 && screen == 5)
+		if(dist(mouseX, mouseY, 41, 53) < 20 && screen == 7)
 		{
 			screen = 4;
 		}

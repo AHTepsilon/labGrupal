@@ -133,6 +133,13 @@ public class ToppingSelector
 			Main.screen = 8;
 			System.out.println("hey");
 		}
+		
+		if(app.mouseX > 66 && app.mouseY > 589 && app.mouseX < 177 & app.mouseY < 619 && Main.screen == 7 &&
+				(selectedExtraCheese || selectedSoda || selectedGarlicDip || selectedNachos || selectedCheeseCrust
+						|| selectedGarlicBread))
+		{
+			Main.screen = 5;
+		}
 	}
 
 }

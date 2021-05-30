@@ -12,6 +12,8 @@ public class pizzaSwitcher
 	PImage pizza1, pizza2, pizza3, pizza4, pizza5;
 	int pizzaSizeSelect;
 	
+	double price;
+	
 	int pizzaX, pizzaY;
 
 	public pizzaSwitcher(int pizzaNumb, PApplet app) 
@@ -203,6 +205,34 @@ public class pizzaSwitcher
 			break;
 		default:
 			break;
+		}
+	}
+	
+	public void paymentCart()
+	{
+		try
+		{
+			switch(pizzaSizeSelect)
+			{
+			case 0:
+				price = 4.99;
+				break;
+			case 1:
+				price = 8.99;
+				break;
+			case 2:
+				price = 12.99;
+				break;
+			case 3:
+				price = 15.99;
+				break;
+			default:
+				throw new Exception("Price different than established");
+			}
+		}
+		catch(Exception priceNonRelated)
+		{
+			price = 0.00;
 		}
 	}
 	
