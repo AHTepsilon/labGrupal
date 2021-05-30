@@ -140,6 +140,58 @@ public class pizzaSwitcher
 		}
 	}
 	
+	public void addPizzaToHistory(PApplet app)
+	{
+		app.textSize(30);
+		app.fill(255, 168, 0);
+		
+		switch(pizzaNumb)
+		{
+		case 0:
+			app.text("Mushrooms \n & Plums", 106, 264 - 115);
+			break;
+		case 1:
+			app.text("Sausage", 106, 264 - 115);
+			break;
+		case 2:
+			app.text("Cheese and \n basil", 106, 264 - 115);
+			break;
+		case 3:
+			app.text("Bell pepper \n and carrot", 106, 264 - 115);
+			break;
+		case 4:
+			app.text("Olives", 106, 264 - 115);
+			break;
+		}
+		
+		app.textSize(14);
+		app.text("Today", 278, 332 - 115);
+		
+		app.fill(255);
+		app.noStroke();
+		app.textSize(18);
+		
+		switch(pizzaSizeSelect)
+		{
+		case 0:
+			app.fill(255);
+			app.text("P", 317, 265 - 115);
+			break;
+		case 1:
+			app.fill(255);
+			app.text("S", 317, 265 - 115);
+			break;
+		case 2:
+			app.fill(255);
+			app.text("M", 317, 265 - 115);
+			break;
+		case 3:
+			app.fill(255);
+			app.text("L", 317, 265 - 115);
+			break;
+		}
+	}
+	
 	public void pizzaHasBeenSelected(PApplet app)
 	{
 		if(Main.screen == 7)

@@ -117,6 +117,32 @@ public class Main extends PApplet {
 			controls.printPrice(this);
 		}
 		
+		if(screen == 6)
+		{
+			textSize(30);
+			fill(255, 168, 0);
+			text("Olives", 106, 264);
+			text("Sausage", 106, 379);
+			text("Sausage", 106, 494);
+			
+			circle(324, 258 - 115, 50);
+			circle(324, 258, 50);
+			circle(324, 258 + 115, 50);
+			circle(324, 258 + 115 + 115, 50);
+			textSize(14);
+			text("Yesterday", 278, 332);
+			text("25/05/21", 278, 332 + 115);
+			text("02/05/21", 278, 332 + 115 + 115);
+			fill(255);
+			noStroke();
+			textSize(18);
+			text("M", 317, 265);
+			text("L", 317, 265 + 115);
+			text("P", 317, 265 + 115 + 115);
+			
+			controls.addPizzaToHistory(this);
+		}
+		
 		printToCart();
 		controls.paymentCart();
 		controls.pizzaHasBeenSelected(this);

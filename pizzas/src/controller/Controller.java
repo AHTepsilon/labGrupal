@@ -93,4 +93,9 @@ public class Controller
 	{
 		toppingSel.printToppingsToCart(app);
 	}
+	
+	public void addPizzaToHistory(PApplet app)
+	{
+		pizzaSw.addPizzaToHistory(app);
+	}
 }
