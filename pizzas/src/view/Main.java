@@ -16,6 +16,8 @@ public class Main extends PApplet {
 	private ControlP5 cp5;
 	public static int screen;
 	boolean isLoginScreen;
+	
+	boolean hasLoggedIn, hasRegistered, hasAddedToCart;
 
 	//// register	
 	public Textfield userName,passWord, Phone, eMail, password, user;
@@ -48,6 +50,10 @@ public class Main extends PApplet {
 		userInfo = new String[50];
 		createTextFields();
 		createTextFieldsRegister();
+		
+		hasLoggedIn = false;
+		hasRegistered = false;
+		hasAddedToCart = false;
 
 	}
 
@@ -66,7 +72,7 @@ public class Main extends PApplet {
 			userLog = user.getStringValue();
 			passwordLog = password.getStringValue();
 			
-			userInfo();
+			//userInfo();
 
 		} else {
 			user.setVisible(false);
@@ -97,8 +103,6 @@ public class Main extends PApplet {
 
 		if (screen == 4) {
 			controls.display(this);
-			
-
 		}
 
 		if (screen == 5) {
@@ -106,13 +110,16 @@ public class Main extends PApplet {
 			fill(255, 168, 0);
 			rect(225, 458, 80, 40);
 			
+			circle(267, 190, 50);
+			
+			printToCart();
 			controls.printPrice(this);
 		}
 		
-		
+		printToCart();
 		controls.paymentCart();
 		controls.pizzaHasBeenSelected(this);
-		System.out.println(pizzaSwitcher.price);
+		System.out.println(mouseX + ", " + mouseY);
 
 	}
 
@@ -125,7 +132,6 @@ public class Main extends PApplet {
 
 		password= cp5.addTextfield("  ").setPosition(57, 300).setColorActive(color(239, 149, 109))
 				.setColorBackground(color(240, 221, 170));
-
 	}
 
 	public void createTextFieldsRegister() { // create the fields
@@ -167,7 +173,7 @@ public class Main extends PApplet {
 	}
 
 
-public void userRegister() { // guarde el txt
+	public void userRegister() { // guarde el txt
 
 		for (int i = 0; i < userInfo.length; i++) {
 
@@ -184,6 +190,11 @@ public void userRegister() { // guarde el txt
 		controls.pizzaSwitchSize(this);
 		controls.toppingSelection(this);
 		controls.confirmToppings(this);
+	}
+	
+	public void printToCart()
+	{
+		controls.printToCart(this);
 	}
 
 	public void mouseReleased() {
@@ -229,6 +240,7 @@ public void userRegister() { // guarde el txt
 		}
 
 		if (dist(mouseX, mouseY, 41, 53) < 20 && screen == 7) {
+			hasAddedToCart = true;
 			screen = 4;
 		}
 

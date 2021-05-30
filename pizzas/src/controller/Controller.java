@@ -83,4 +83,9 @@ public class Controller
 	{
 		pizzaSw.printPrice(app);
 	}
+	
+	public void printToCart(PApplet app)
+	{
+		pizzaSw.printToCart(app);
+	}
 }

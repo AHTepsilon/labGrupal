@@ -55,14 +55,11 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(187, 454, 60);
-				
-				pizzaSwitcher.price += 1.99;
 			}
 			
 			else if(selectedSoda)
 			{
 				selectedSoda = false;
-				pizzaSwitcher.price -= 1.99;
 			}
 		}
 		
@@ -74,14 +71,11 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(292, 454, 60);
-				
-				pizzaSwitcher.price += 1.99;
 			}
 			
 			else if(selectedGarlicDip)
 			{
 				selectedGarlicDip = false;
-				pizzaSwitcher.price -= 1.99;
 			}
 		}
 		
@@ -93,14 +87,11 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(80, 535, 60);
-			
-				pizzaSwitcher.price += 1.99;
 			}
 			
 			else if(selectedNachos)
 			{
 				selectedNachos = false;
-				pizzaSwitcher.price -= 1.99;
 			}
 		}
 		
@@ -112,14 +103,11 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(187, 535, 60);
-				
-				pizzaSwitcher.price += 1.99;
 			}
 			
 			else if(selectedCheeseCrust)
 			{
 				selectedCheeseCrust = false;
-				pizzaSwitcher.price -= 1.99;
 			}
 		}
 		
@@ -131,14 +119,11 @@ public class ToppingSelector
 				System.out.println("SELECTED");
 				app.fill(0, 0, 0, 40);
 				app.circle(292, 535, 60);
-				
-				pizzaSwitcher.price += 1.99;
 			}
 			
 			else if(selectedGarlicBread)
 			{
 				selectedGarlicBread = false;
-				pizzaSwitcher.price -= 1.99;
 			}
 		}
 	}

@@ -91,6 +91,55 @@ public class pizzaSwitcher
 		}
 	}
 	
+	public void printToCart(PApplet app)
+	{
+			if(Main.screen == 5)
+			{
+				
+			app.textSize(21);
+			app.fill(255, 168, 0);
+			
+			switch(pizzaNumb)
+			{
+			case 0:
+				app.text("Mushrooms \n & Plums", 67, 180);
+				break;
+			case 1:
+				app.text("Sausage", 67, 180);
+				break;
+			case 2:
+				app.text("Cheese and \n basil", 67, 180);
+				break;
+			case 3:
+				app.text("Bell pepper \n and carrot", 67, 180);
+				break;
+			case 4:
+				app.text("Olives", 67, 180);
+				break;
+			}
+			
+			switch(pizzaSizeSelect)
+			{
+			case 0:
+				app.fill(255);
+				app.text("P", 260, 200);
+				break;
+			case 1:
+				app.fill(255);
+				app.text("S", 260, 200);
+				break;
+			case 2:
+				app.fill(255);
+				app.text("M", 260, 200);
+				break;
+			case 3:
+				app.fill(255);
+				app.text("L", 260, 200);
+				break;
+			}
+		}
+	}
+	
 	public void pizzaHasBeenSelected(PApplet app)
 	{
 		if(Main.screen == 7)
