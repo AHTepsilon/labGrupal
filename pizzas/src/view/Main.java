@@ -1,5 +1,7 @@
 package view;
 
+import java.util.Arrays;
+
 import controlP5.ControlP5;
 import controlP5.Textfield;
 import controller.Controller;
@@ -20,10 +22,14 @@ public class Main extends PApplet {
 	boolean hasLoggedIn, hasRegistered, hasAddedToCart;
 
 	//// register	
-	public Textfield userName,passWord, Phone, eMail, password, user;
-	public String userLog, passwordLog,  name, userpass, phone, email;
-	private String[] userInfo, infoText;
+	public Textfield userName, passWord, Phone, eMail, password, user;
+	public String userLog, passwordLog, name, userpass, phone, email;
+	public Textfield holder, card, date, cvv;
+	public String holderName, cardNumber, expiration, CCV;
+	private String[] userInfo, newuserInfo, infoText;
 	// -------------------
+	boolean SignUp, logIn;
+	boolean addedPayment;
 
 	public static void main(String[] args) {
 		PApplet.main("view.Main");
@@ -45,14 +51,21 @@ public class Main extends PApplet {
 
 		screen = 1;
 
+		System.out.println(screen);
+		
+		SignUp = false;
+		logIn = false;
+
 		controls.loadScreenSw(this);
 		controls.loadEm(this);
-		userInfo = new String[50];
+
+		userInfo = new String[1];
+		newuserInfo = new String[userInfo.length + 1];
+
 		createTextFields();
 		createTextFieldsRegister();
-		
-		hasLoggedIn = false;
-		hasRegistered = false;
+		payment();
+
 		hasAddedToCart = false;
 
 	}
@@ -72,7 +85,14 @@ public class Main extends PApplet {
 			userLog = user.getStringValue();
 			passwordLog = password.getStringValue();
 			
-			//userInfo();
+			try
+			{
+				userInfo();
+			}
+			catch(IndexOutOfBoundsException error)
+			{
+				
+			}
 
 		} else {
 			user.setVisible(false);
@@ -138,9 +158,27 @@ public class Main extends PApplet {
 			textSize(18);
 			text("M", 317, 265);
 			text("L", 317, 265 + 115);
-			text("P", 317, 265 + 115 + 115);
-			
+			text("P", 317, 265 + 115 + 115);		
 			controls.addPizzaToHistory(this);
+		}
+		
+		if (screen == 8) {
+
+			holder.setVisible(true);
+			card.setVisible(true);
+			date.setVisible(true);
+			cvv.setVisible(true);
+
+			holderName = holder.getStringValue();
+			cardNumber = card.getStringValue();
+			expiration = date.getStringValue();
+			CCV = cvv.getStringValue();
+
+		} else {
+			holder.setVisible(false);
+			card.setVisible(false);
+			date.setVisible(false);
+			cvv.setVisible(false);
 		}
 		
 		printToCart();
@@ -186,15 +224,46 @@ public class Main extends PApplet {
 				String[] Line1 = infoText[i].split(" ");
 
 				name = Line1[0];
-				userpass = Line1[1];
-				phone = Line1[2];
-				email = Line1[3];
+				phone = Line1[1];
+				email = Line1[2];
+				userpass = Line1[3];
 
 			}
-			
-			System.out.println(name.equals(userLog));
-			System.out.println(userpass.equals(passwordLog));
 
+			try {
+				System.out.println(name.equals(userLog));
+				System.out.println(userpass.equals(passwordLog));
+
+				if (name.equals(userLog) == true && userpass.equals(passwordLog) == true) {
+					textSize(10);
+					textMode(CENTER);
+					fill(255, 168, 0);
+					text("the user its okay", 120, 375);
+					logIn = true;
+				}
+
+				if (name.equals(userLog) == false || userpass.equals(passwordLog) == false) {
+					textSize(10);
+					textMode(CENTER);
+					fill(255, 168, 0);
+					text("the user isnt okay", 120, 375);
+
+					logIn = false;
+				}
+
+			} catch (Exception e) {
+				System.out.println("there is not users");
+				textSize(10);
+				textMode(CENTER);
+				fill(255, 168, 0);
+				text("PLEASE CREATE A USER :D", 120, 375);
+				SignUp = true;
+			}
+		}
+		
+		else
+		{
+			userInfo = null;
 		}
 
 	}
@@ -209,8 +278,29 @@ public class Main extends PApplet {
 			System.out.println(userInfo[i]);
 		}
 		saveStrings("./data/info/userInfo.txt", userInfo);
-		
-		return;
+
+		System.arraycopy(userInfo, 0, newuserInfo, 0, userInfo.length);
+
+		System.out.println("Muestro nombres de personas " + Arrays.toString(userInfo));
+
+		userInfo = newuserInfo;
+	}
+	
+	public void payment() {
+
+		cp5 = new ControlP5(this); // create an instance of the controlP5 object for this program
+
+		holder = cp5.addTextfield("       ").setPosition(55, 125).setColorActive(color(239, 149, 109))
+				.setColorBackground(color(240, 221, 170)).setSize(274, 20);
+
+		card = cp5.addTextfield("        ").setPosition(50, 190).setColorActive(color(239, 149, 109))
+				.setColorBackground(color(240, 221, 170)).setSize(274, 20);
+
+		date = cp5.addTextfield("         ").setPosition(45, 260).setColorActive(color(239, 149, 109))
+				.setColorBackground(color(240, 221, 170)).setSize(112, 20);
+
+		cvv = cp5.addTextfield("          ").setPosition(184, 260).setColorActive(color(239, 149, 109))
+				.setColorBackground(color(240, 221, 170)).setSize(40, 20);
 	}
 
 	public void mousePressed() {
@@ -277,6 +367,31 @@ public class Main extends PApplet {
 
 		if (dist(mouseX, mouseY, 118, 220) < 20 && screen == 4) {
 			controls.pizzaSwitchDown();
+		}
+		
+		if(mouseX > 88 && mouseX < 298 && mouseY > 545 && mouseY < 585 && screen == 8)
+		{
+			screen = 9;
+		}
+		
+		if(mouseX > 228 && mouseX < 270 && mouseY > 575 && mouseY < 618 && screen == 5)
+		{
+			screen = 9;
+		}
+		
+		if(mouseX > 168 && mouseX < 209 && mouseY > 575 && mouseY < 618 && screen == 5)
+		{
+			screen = 9;
+		}
+		
+		if(dist(mouseX ,mouseY, 40, 622) < 20 && screen == 4)
+		{
+			exit();
+		}
+		
+		if(dist(mouseX, mouseY, 40, 50) < 20 && screen == 4)
+		{
+			screen = 2;
 		}
 
 		// 66, 589, 177, 619, 198, 589, 308, 619

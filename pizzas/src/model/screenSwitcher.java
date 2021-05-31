@@ -26,6 +26,7 @@ public class screenSwitcher
 		cartScreen = app.loadImage("shoppingCart.png");
 		pizzaSelectScreen = app.loadImage("toppingSelect.png");
 		paymentScreen = app.loadImage("paymentScreen.png");
+		exitScreen = app.loadImage("exitScreen.png");
 	}
 	
 	public void screenControl(PApplet app)
@@ -76,6 +77,11 @@ public class screenSwitcher
 		if(Main.screen == 8)
 		{
 			app.image(paymentScreen, 0, 0);
+		}
+		
+		if(Main.screen == 9)
+		{
+			app.image(exitScreen, 0, 0);
 		}
 	}
 
